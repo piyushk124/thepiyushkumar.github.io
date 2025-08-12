@@ -1,0 +1,147 @@
+/* style.css for Piyush Kumar | Technical Product Manager */
+
+:root {
+  --primary: #23395d;
+  --accent: #fca311;
+  --bg: #f8f9fa;
+  --text: #232323;
+  --muted: #666;
+  --border-radius: 12px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+header {
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  padding: 3rem 1rem 2rem 1rem;
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}
+
+header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.4rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+header p {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7em 1.7em;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(35,57,93,0.07);
+}
+
+.cta:hover {
+  background: #fb8800;
+  color: #fff;
+}
+
+section {
+  max-width: 680px;
+  margin: 2.5rem auto;
+  background: #fff;
+  padding: 2.2rem 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 16px rgba(35,57,93,0.07);
+  border-left: 5px solid var(--accent);
+}
+
+section h2 {
+  margin-top: 0;
+  color: var(--primary);
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+ul {
+  padding-left: 1.1em;
+}
+
+ul li {
+  margin-bottom: 0.75em;
+  font-size: 1.08rem;
+}
+
+.project {
+  margin-bottom: 1.4rem;
+  padding-left: 0.5rem;
+  border-left: 3px solid var(--primary);
+}
+
+.project h3 {
+  margin-top: 0;
+  margin-bottom: 0.35rem;
+  font-size: 1.12rem;
+  color: var(--accent);
+}
+
+#skills p {
+  font-size: 1.12rem;
+  color: var(--muted);
+}
+
+#contact a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+#contact a:hover {
+  color: var(--accent);
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin: 2.5rem 0 1.2rem 0;
+  letter-spacing: 0.3px;
+}
+
+/* Responsive Styles */
+@media (max-width: 800px) {
+  section {
+    padding: 1.3rem 0.8rem;
+    margin: 1.5rem 0.5rem;
+  }
+  header {
+    padding: 2.2rem 0.6rem 1.3rem 0.6rem;
+  }
+}
+
+@media (max-width: 500px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  section h2 {
+    font-size: 1.15rem;
+  }
+  .cta {
+    font-size: 1rem;
+    padding: 0.5em 1.1em;
+  }
+}
