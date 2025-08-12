@@ -1,47 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Piyush Kumar - Technical Product Manager</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piyush Kumar - Technical Product Manager Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <img src="profile.jpg" alt="Piyush Kumar" class="profile-img">
-        <h1>Piyush Kumar</h1>
-        <p class="headline">Technical Product Manager | API, AI & Cloud Platforms</p>
-    </header>
 
-    <section class="about">
-        <h2>About Me</h2>
-        <p>
-            Technical Product Manager with 8+ years of experience delivering API, AI, and Cloud-first enterprise products for global markets. Skilled in defining product vision, building data-driven roadmaps, and leading cross-functional teams to deliver scalable, high-impact solutions. Passionate about innovation, strategy, and execution that drive measurable business outcomes.
-        </p>
-    </section>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <img src="profile.jpg" alt="Piyush Kumar" class="profile-pic">
+      <h1>Piyush Kumar</h1>
+      <h2 class="typed-line" data-phrases="Technical Product Manager,Product Owner,API & AI Platforms,Scaling Enterprise Products">
+        <span id="typed-text"></span><span class="cursor">|</span>
+      </h2>
+      <p>Bangalore, India | <a href="mailto:piyushkumar124@gmail.com">piyushkumar124@gmail.com</a> | 
+      <a href="https://www.linkedin.com/in/piyushtpm" target="_blank">LinkedIn</a> | 
+      <a href="https://github.com/piyushk124" target="_blank">GitHub</a></p>
+    </div>
+  </header>
 
-    <section class="experience">
-        <h2>Experience Highlights</h2>
-        <ul>
-            <li><strong>Nous Infosystems</strong> – AI-first API platform strategy, improving feature adoption by 20% in 6 months.</li>
-            <li><strong>Epicor</strong> – Led API integrations for a global TMS platform, reducing manual processes by 25%.</li>
-            <li><strong>ACL Digital</strong> – Launched 30+ features in a year, boosting engagement by 30% and market share by 20%.</li>
-        </ul>
-    </section>
+  <!-- SUMMARY -->
+  <section class="section">
+    <h3>About Me</h3>
+    <p>
+      Technical Product Manager with 8.3+ years of experience delivering API, AI, and Cloud-first platforms 
+      for global enterprises. Skilled at defining product vision, building data-driven roadmaps, and leading 
+      cross-functional teams to launch high-impact products. Achieved measurable results including 
+      30% growth in user engagement, 25% CSAT improvement, and 20% market share expansion.
+    </p>
+  </section>
 
-    <section class="skills">
-        <h2>Core Skills</h2>
-        <p>Product Strategy • API Platforms • AI-Driven Solutions • Roadmap Planning • Agile Leadership • Cloud Architecture • Stakeholder Management</p>
-    </section>
+  <!-- EXPERIENCE -->
+  <section class="section">
+    <h3>Experience</h3>
+    <ul>
+      <li><strong>Lead Technical Product Manager | Nous Infosystems</strong> (Mar 2025 – Present) — AI-first API platform strategy, roadmap execution, global product delivery.</li>
+      <li><strong>Technical Product Manager | Epicor</strong> (Mar 2024 – Mar 2025) — Owned TMS product lifecycle, API integrations, data visualization, and enterprise adoption growth.</li>
+      <li><strong>Technical Product Manager | ACL Digital</strong> (Dec 2021 – Oct 2022) — Launched 30+ features in a year, boosting user engagement and market share.</li>
+    </ul>
+  </section>
 
-    <section class="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:piyushkumar124@gmail.com">piyushkumar124@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/piyushtpm" target="_blank">linkedin.com/in/piyushtpm</a></p>
-    </section>
+  <!-- KEY ACHIEVEMENTS -->
+  <section class="section">
+    <h3>Key Achievements</h3>
+    <ul>
+      <li>Launched 30+ features in one year, boosting user engagement by 30%.</li>
+      <li>Improved CSAT by 25% and market share by 20% via customer-focused releases.</li>
+      <li>Reduced CAC by 15% through lifecycle optimization and GTM improvements.</li>
+    </ul>
+  </section>
 
-    <footer>
-        <p>© 2025 Piyush Kumar</p>
-    </footer>
+  <!-- EDUCATION -->
+  <section class="section">
+    <h3>Education</h3>
+    <p><strong>CPO Executive Program</strong> – IIM Kozhikode (Ongoing, Collaboration with Kellogg Executive Education)</p>
+    <p><strong>AI Generalist Accelerator</strong> – Outskill (Ongoing)</p>
+    <p><strong>B.Tech (Computer Science)</strong> – Lovely Professional University</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Piyush Kumar | Built with 💡 for innovation</p>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    // Typing animation (phrases taken from HTML data-phrases)
+    (function(){
+      const typedElement = document.querySelector('.typed-line');
+      const phrases = typedElement.dataset.phrases.split(',');
+      const el = document.getElementById('typed-text');
+      let i=0, j=0, current='', forward=true;
+      function type(){
+        const full = phrases[i].trim();
+        if(forward){
+          current = full.slice(0, ++j);
+          el.textContent = current;
+          if(j === full.length){ forward=false; setTimeout(type,900); return;}
+        } else {
+          current = full.slice(0, --j);
+          el.textContent = current;
+          if(j===0){ forward=true; i=(i+1)%phrases.length; setTimeout(type,250); return;}
+        }
+        setTimeout(type, forward?80:40);
+      }
+      type();
+    })();
+
+    // Reveal on scroll
+    const sections = document.querySelectorAll('.section');
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('in-view'); }
+      });
+    }, {threshold: 0.12});
+    sections.forEach(s=>obs.observe(s));
+  </script>
 </body>
 </html>
