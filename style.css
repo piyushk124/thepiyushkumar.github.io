@@ -1,147 +1,194 @@
-/* style.css for Piyush Kumar | Technical Product Manager */
-
-:root {
-  --primary: #23395d;
-  --accent: #fca311;
-  --bg: #f8f9fa;
-  --text: #232323;
-  --muted: #666;
-  --border-radius: 12px;
-}
-
-html, body {
+/* General reset and font */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-  scroll-behavior: smooth;
+  background: #f4f6fb;
+  color: #222;
+  line-height: 1.7;
+  font-size: 1rem;
 }
 
+/* Header and Navigation */
 header {
-  background: var(--primary);
+  background: #1e2850;
   color: #fff;
+  padding: 2em 0 1em 0;
   text-align: center;
-  padding: 3rem 1rem 2rem 1rem;
-  border-bottom-left-radius: var(--border-radius);
-  border-bottom-right-radius: var(--border-radius);
+  box-shadow: 0 2px 10px rgba(30,40,80,0.06);
+}
+.avatar-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 1.5em;
+  border: 3px solid #8de4db;
+}
+.intro h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.4em;
+  color: #8de4db;
+}
+.intro h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #ccd9e8;
+  margin-bottom: 0.5em;
+}
+.intro p {
+  font-size: 1rem;
+  color: #d4e3fc;
 }
 
-header h1 {
-  margin: 0 0 0.5rem 0;
-  font-size: 2.4rem;
-  letter-spacing: 1px;
+nav {
+  margin-top: 1.2em;
+}
+nav a {
+  color: #8de4db;
+  margin: 0 1.5em;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+nav a:hover, nav a:focus {
+  color: #fff;
+  border-bottom: 2px solid #8de4db;
+}
+
+/* Main content sections */
+main {
+  max-width: 900px;
+  margin: 2em auto;
+  padding: 0 1em;
+}
+section {
+  margin-bottom: 2.5em;
+}
+h2 {
+  color: #144873;
+  margin-bottom: 0.8em;
+  font-size: 1.4rem;
+  border-left: 5px solid #8de4db;
+  padding-left: 0.5em;
+}
+
+/* Highlights */
+.highlights {
+  display: flex;
+  gap: 2.5em;
+  margin: 1.2em 0;
+  flex-wrap: wrap;
+}
+.highlights div {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(20,72,115,0.09);
+  padding: 1.1em;
+  text-align: center;
+}
+.highlights span {
+  display: block;
+  font-size: 1.7rem;
+  color: #12c2b9;
   font-weight: 700;
 }
 
-header p {
-  margin: 0 0 1.5rem 0;
-  font-size: 1.25rem;
-  font-weight: 400;
-}
-
-.cta {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.7em 1.7em;
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 24px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.2s;
-  box-shadow: 0 2px 8px rgba(35,57,93,0.07);
-}
-
-.cta:hover {
-  background: #fb8800;
-  color: #fff;
-}
-
-section {
-  max-width: 680px;
-  margin: 2.5rem auto;
+/* Timeline */
+.timeline .job {
+  margin-bottom: 1.8em;
+  border-left: 3px solid #8de4db;
+  padding-left: 1em;
   background: #fff;
-  padding: 2.2rem 2rem;
-  border-radius: var(--border-radius);
-  box-shadow: 0 2px 16px rgba(35,57,93,0.07);
-  border-left: 5px solid var(--accent);
+  border-radius: 6px;
+  box-shadow: 0 1px 6px rgba(50,70,90,0.06);
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+}
+.job-duration {
+  font-size: 0.95em;
+  color: #159fb7;
 }
 
-section h2 {
-  margin-top: 0;
-  color: var(--primary);
-  font-size: 1.5rem;
-  letter-spacing: 0.5px;
+/* Projects */
+.project-list {
+  display: flex;
+  gap: 1.8em;
+  flex-wrap: wrap;
 }
-
-ul {
-  padding-left: 1.1em;
-}
-
-ul li {
-  margin-bottom: 0.75em;
-  font-size: 1.08rem;
-}
-
 .project {
-  margin-bottom: 1.4rem;
-  padding-left: 0.5rem;
-  border-left: 3px solid var(--primary);
+  flex: 1 1 280px;
+  background: #f8fbff;
+  border: 1px solid #cee5f4;
+  border-radius: 8px;
+  padding: 1.2em;
+  box-shadow: 0 0 6px rgba(23, 133, 141,0.05);
+  margin-bottom: 1em;
 }
-
 .project h3 {
-  margin-top: 0;
-  margin-bottom: 0.35rem;
-  font-size: 1.12rem;
-  color: var(--accent);
+  margin-bottom: 0.5em;
+  color: #159fb7;
+  font-size: 1.1em;
+}
+.project .tags {
+  display: inline-block;
+  font-size: 0.97em;
+  color: #555;
+  margin-top: 0.6em;
 }
 
-#skills p {
-  font-size: 1.12rem;
-  color: var(--muted);
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6em;
+  margin-bottom: 1em;
+}
+.skill-list span {
+  background: #e6f4f1;
+  color: #189cb5;
+  border-radius: 3px;
+  padding: 0.35em 0.9em;
+  font-size: 0.97em;
+  margin-bottom: 0.3em;
+}
+.certs {
+  font-size: 0.99em;
+  color: #22716e;
+  margin-top: 0.7em;
 }
 
-#contact a {
-  color: var(--primary);
-  text-decoration: underline;
-}
-
-#contact a:hover {
-  color: var(--accent);
+section#contact p {
+  color: #466;
 }
 
 footer {
+  background: #1e2850;
+  color: #aad4e1;
   text-align: center;
-  color: var(--muted);
-  font-size: 1.05rem;
-  margin: 2.5rem 0 1.2rem 0;
-  letter-spacing: 0.3px;
+  padding: 1em 0;
+  font-size: 0.97em;
+}
+footer a {
+  color: #8de4db;
+  text-decoration: underline;
 }
 
-/* Responsive Styles */
-@media (max-width: 800px) {
-  section {
-    padding: 1.3rem 0.8rem;
-    margin: 1.5rem 0.5rem;
+/* Responsive design */
+@media (max-width: 768px) {
+  .highlights, .project-list, .avatar-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1em;
   }
-  header {
-    padding: 2.2rem 0.6rem 1.3rem 0.6rem;
-  }
-}
-
-@media (max-width: 500px) {
-  header h1 {
-    font-size: 1.5rem;
-  }
-  section h2 {
-    font-size: 1.15rem;
-  }
-  .cta {
-    font-size: 1rem;
-    padding: 0.5em 1.1em;
+  .avatar {
+    margin: 0 auto 1em auto;
   }
 }
