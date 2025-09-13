@@ -1,11 +1,9 @@
 /* Basic reset and box-sizing to avoid layout shifts */
 *, *::before, *::after { box-sizing: border-box; }
 html, body { height: 100%; margin: 0; padding: 0; }
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
-.container { max-width: 1100px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; width: 100%; }
 main[role="main"] { display: block; min-height: calc(100vh - 160px); }
 
-/* Existing site styles - preserving original design */
+/* Body and container styles - merging reset with existing design */
 body {
   font-family: 'Segoe UI', Tahoma, sans-serif;
   background-color: #0f172a;
@@ -13,10 +11,14 @@ body {
   line-height: 1.6;
 }
 
-/* Container */
+/* Container - merged responsive and existing styles */
 .container {
-  text-align: center;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 3rem 1rem;
+  width: 100%;
+  text-align: center;
 }
 
 /* Profile Picture */
