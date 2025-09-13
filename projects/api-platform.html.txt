@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-First API Platform | Case Study</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand"><a href="../index.html">← Back to Portfolio</a></div>
+  </nav>
+
+  <header class="hero">
+    <h1>🤖 AI-First API Platform</h1>
+    <p>Roper Technologies | Enterprise API Strategy</p>
+  </header>
+
+  <section class="case-study">
+    <h2>Overview</h2>
+    <p>
+      Led API-first strategy rollout for enterprise adoption, driving <strong>20% adoption growth</strong>
+      across global business units with 10k+ users.
+    </p>
+
+    <h2>Challenges</h2>
+    <ul>
+      <li>Low adoption across distributed business units</li>
+      <li>Legacy API architecture lacking scalability</li>
+      <li>Need for AI-first automation to reduce time-to-market</li>
+    </ul>
+
+    <h2>Solutions</h2>
+    <ul>
+      <li>Designed AI-first API product frameworks</li>
+      <li>Implemented data-driven roadmap execution</li>
+      <li>Launched scalable, user-first features</li>
+    </ul>
+
+    <h2>Impact</h2>
+    <ul>
+      <li>📊 Increased adoption across 10k+ users by 20%</li>
+      <li>⚡ Reduced release time-to-market by 20%</li>
+      <li>🌍 Improved scalability for global rollout</li>
+    </ul>
+  </section>
+</body>
+</html>
