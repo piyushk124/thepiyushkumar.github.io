@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piyush Kumar | Technical Product Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-brand">Piyush Kumar</div>
+    <button class="nav-toggle" id="nav-toggle">☰</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Dark Mode Toggle -->
+  <button id="theme-toggle">🌙 Dark Mode</button>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Hi, I’m <span>Piyush Kumar</span> 👋</h1>
+    <p>Technical Product Manager | API & AI Product Strategy | Enterprise Platforms</p>
+    <div class="links">
+      <a href="mailto:piyushkumar124@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/piyush-productmanager/" target="_blank">LinkedIn</a>
+      <a href="https://thepiyushkumar.com/" target="_blank">Portfolio</a>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m a <strong>Technical Product Manager</strong> with 8+ years of experience building
+      <strong>AI-first, API-driven enterprise platforms</strong>. I specialize in product strategy,
+      data-driven decision-making, and cross-functional leadership.
+    </p>
+    <ul>
+      <li>Scaled platforms for 10k+ enterprise users</li>
+      <li>Launched 30+ features annually (+30% engagement, +25% CSAT)</li>
+      <li>Reduced time-to-market by 20% and integration effort by 25%</li>
+    </ul>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="experience" id="experience">
+    <h2>Work Experience</h2>
+    <div class="job">
+      <h3>Lead Technical Product Manager | Nous Infosystems (Roper Technologies)</h3>
+      <span>Mar 2025 – Present | Bangalore</span>
+      <ul>
+        <li>Boosted enterprise adoption by 20% with AI-first API strategy</li>
+        <li>Launched scalable features for 10k+ global users</li>
+        <li>Reduced release cycle by 20% via data-informed execution</li>
+      </ul>
+    </div>
+    <div class="job">
+      <h3>Technical Product Manager | Epicor</h3>
+      <span>Mar 2024 – Mar 2025 | Bangalore</span>
+      <ul>
+        <li>Owned lifecycle of SaaS TMS powering millions of shipments</li>
+        <li>Reduced integration effort by 25% with streamlined APIs</li>
+        <li>Improved adoption & CSAT by 15%</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>🚚 Transportation Management SaaS (Epicor)</h3>
+        <p>Global SaaS TMS powering millions of shipments annually for 100+ logistics enterprises.</p>
+        <a href="projects/transportation.html" class="btn">🔗 View Case Study</a>
+      </div>
+      <div class="project-card">
+        <h3>🤖 AI-First API Platform (Roper Technologies)</h3>
+        <p>Accelerated enterprise adoption by 20% with AI-first strategy and scalable API design.</p>
+        <a href="projects/api-platform.html" class="btn">🔗 View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>✈️ Amadeus Travel Solutions</h3>
+        <p>Launched 30+ features in one year, improving CSAT by 25% and market share by 20%.</p>
+        <a href="projects/amadeus.html" class="btn">🔗 View Details</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li><strong>Product Leadership:</strong> Roadmap Planning, GTM, Backlog Prioritization</li>
+      <li><strong>Execution:</strong> Agile (Scrum, SAFe), UAT, Stakeholder Management</li>
+      <li><strong>AI & Data:</strong> SQL, Power BI, A/B Testing, GenAI, KPI Dashboards</li>
+      <li><strong>Tech:</strong> REST/SOAP APIs, AWS, Azure, Postman, Swagger, Figma, Jira</li>
+    </ul>
+  </section>
+
+  <!-- Education -->
+  <section class="education" id="education">
+    <h2>Education</h2>
+    <ul>
+      <li>B.Tech in Computer Science – Lovely Professional University</li>
+      <li>CPO Executive Program (AI Product Leadership) – IIM Kozhikode (Ongoing)</li>
+      <li>AI Generalist Accelerator – Outskill (Ongoing)</li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <footer class="footer" id="contact">
+    <h2>Contact Me</h2>
+    <p>Let’s connect! You can reach out via LinkedIn, or drop me a direct email below 👇</p>
+    <p>
+      🔗 <a href="https://www.linkedin.com/in/piyush-productmanager/" target="_blank">LinkedIn</a> | 
+      📧 <a href="mailto:piyushkumar124@gmail.com">Email</a>
+    </p>
+    <form id="contact-form" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="_replyto" placeholder="Your Email" required>
+      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="form-status" class="form-status"></p>
+    <p class="note">⚡ This form is powered by Formspree. I’ll get back to you soon!</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
