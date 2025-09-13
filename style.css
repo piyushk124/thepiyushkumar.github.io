@@ -59,13 +59,14 @@ html {
   color: white;
 }
 
-.hero h1 span {
+.hero h1 {
    font-size: 7rem;  /* ~48px */
   font-weight: bold;
   line-height: 2;
-  color: #00b4d8;
 }
-
+.hero h1 span {
+color: #00b4d8;
+}
 
 /* Sections */
 section {
