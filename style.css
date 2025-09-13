@@ -92,37 +92,6 @@ ul {
   margin: 0.5rem 0 1rem 1.5rem;
 }
 
-/* Projects Grid */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.project-card {
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background: #00b4d8;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: background 0.3s;
-}
-
-.btn:hover {
-  background: #0096c7;
-}
-
 /* Contact Form */
 .contact-form {
   max-width: 500px;
