@@ -60,11 +60,18 @@ html {
 }
 
 .hero h1 {
-   font-size: 7rem !important;  /* ~48px */
+   font-size: 6rem;  /* ~48px */
   font-weight: bold;
   line-height: 2.5;
+  color: #00b4d8;
 }
 .hero h1 span {
+   font-size: 7rem !important;  /* Added !important to override */
+   font-weight: bold;
+   line-height: 2.5;
+   color: #00b4d8;
+   display: inline-block;  /* Sometimes helps with sizing */
+}
 color: #00b4d8;
 }
 
