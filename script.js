@@ -44,7 +44,7 @@ form.addEventListener("submit", async (e) => {
     });
 
     if (response.ok) {
-      status.textContent = "✅ Thanks for contacting!! Will get back to you soon.";
+      status.textContent = "✅ Sucess! Thanks for contacting ";
       status.className = "form-status success";
       form.reset();
     } else {
