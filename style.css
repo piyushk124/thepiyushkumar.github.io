@@ -55,7 +55,7 @@ html {
 .hero {
   text-align: center;
   padding: 3rem 1rem;
-  background: #222;
+  background: red !important;
   color: white;
 }
 
