@@ -1,9 +1,10 @@
-/* Basic reset and box-sizing to avoid layout shifts */
-*, *::before, *::after { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; padding: 0; }
-main[role="main"] { display: block; min-height: calc(100vh - 160px); }
+/* Reset and Base Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* Body and container styles - merging reset with existing design */
 body {
   font-family: 'Segoe UI', Tahoma, sans-serif;
   background-color: #0f172a;
@@ -11,14 +12,10 @@ body {
   line-height: 1.6;
 }
 
-/* Container - merged responsive and existing styles */
+/* Container */
 .container {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 3rem 1rem;
-  width: 100%;
   text-align: center;
+  padding: 3rem 1rem;
 }
 
 /* Profile Picture */
