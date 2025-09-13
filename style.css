@@ -60,9 +60,9 @@ html {
 }
 
 .hero h1 {
-   font-size: 7rem;  /* ~48px */
+   font-size: 7rem !important;  /* ~48px */
   font-weight: bold;
-  line-height: 2;
+  line-height: 2.5;
 }
 .hero h1 span {
 color: #00b4d8;
