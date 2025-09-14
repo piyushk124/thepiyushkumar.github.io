@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const navToggle = document.getElementById("nav-toggle");
   const navLinksContainer = document.getElementById("nav-links");
   
-  if (navToggle && navLinks极速加速器Container) {
+  if (navToggle && navLinksContainer) {
     navToggle.addEventListener("click", () => {
       navLinksContainer.classList.toggle("active");
       navToggle.setAttribute('aria-expanded', 
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Trigger counter animation when stats section is visible
-  const statsObserver = new IntersectionObserver((entries极速加速器) => {
+  const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const statNumbers = entry.target.querySelectorAll('.stat-number');
@@ -177,6 +177,12 @@ document.addEventListener('DOMContentLoaded', function() {
     statsObserver.observe(statsSection);
   }
 
+  // Preload critical resources
+  const preloadLink = document.createElement('link');
+  preloadLink.rel = 'preconnect';
+  preloadLink.href = 'https://fonts.googleapis.com';
+  document.head.appendChild(preloadLink);
+  
   // Initialize animations on page load
   highlightNavigation();
 });
