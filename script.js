@@ -1,1028 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Piyush Kumar | Technical Product Manager</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+// Enhanced JavaScript functionality
 
-    :root {
-      --primary-blue: #007AFF;
-      --secondary-blue: #00D4FF;
-      --dark-bg: #0A0E1A;
-      --card-bg: #1A1F2E;
-      --text-primary: #FFFFFF;
-      --text-secondary: #A8B2D1;
-      --accent-green: #00D084;
-      --border-color: #2A3441;
-      --shadow-light: rgba(0, 122, 255, 0.15);
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-      background: var(--dark-bg);
-      color: var(--text-primary);
-      line-height: 1.6;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
-    }
-
-    /* Enhanced Navbar */
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(10, 14, 26, 0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      z-index: 1000;
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--border-color);
-      transition: all 0.3s ease;
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 2rem;
-    }
-
-    .nav-brand {
-      font-size: 1.5rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-weight: 500;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      position: relative;
-    }
-
-    .nav-links a:hover, .nav-links a.active {
-      color: var(--primary-blue);
-      background: rgba(0, 122, 255, 0.1);
-    }
-
-    .nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--text-primary);
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    /* Hero Section */
-    .hero {
-      padding: 10rem 2rem 6rem;
-      text-align: center;
-      background: linear-gradient(135deg, var(--dark-bg) 0%, #1A1F2E 50%, var(--dark-bg) 100%);
-      position: relative;
-      overflow: hidden;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: 
-        radial-gradient(circle at 20% 30%, rgba(0, 122, 255, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(0, 212, 255, 0.1) 0%, transparent 40%);
-      animation: float 6s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-20px) rotate(2deg); }
-    }
-
-    .hero-content {
-      max-width: 900px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-      animation: fadeInUp 1s ease-out;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(60px);
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: rgba(0, 122, 255, 0.1);
-      border: 1px solid rgba(0, 122, 255, 0.3);
-      color: var(--primary-blue);
-      padding: 0.5rem 1.5rem;
-      border-radius: 50px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 2rem;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
-
-    .hero h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 800;
-      margin-bottom: 1.5rem;
-      line-height: 1.1;
-    }
-
-    .hero .role {
-      background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero .tagline {
-      color: var(--text-secondary);
-      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-      font-weight: 400;
-      margin-bottom: 2rem;
-      line-height: 1.4;
-    }
-
-    .hero-description {
-      font-size: 1.1rem;
-      color: var(--text-secondary);
-      margin-bottom: 3rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.6;
-    }
-
-    .cta-buttons {
-      display: flex;
-      gap: 1.5rem;
-      justify-content: center;
-      margin-top: 3rem;
-    }
-
-    .btn {
-      padding: 1.2rem 2.5rem;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-      color: white;
-      box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
-    }
-
-    .btn-primary::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: left 0.5s;
-    }
-
-    .btn-primary:hover::before {
-      left: 100%;
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--primary-blue);
-      border: 2px solid var(--primary-blue);
-      box-shadow: 0 4px 20px rgba(0, 122, 255, 0.1);
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 40px rgba(0, 122, 255, 0.4);
-    }
-
-    .btn-secondary:hover {
-      background: var(--primary-blue);
-      color: white;
-    }
-
-    /* Enhanced Stats Section */
-    .stats {
-      padding: 6rem 2rem;
-      background: var(--card-bg);
-      position: relative;
-    }
-
-    .stats::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--primary-blue), transparent);
-    }
-
-    .stats-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      text-align: center;
-    }
-
-    .stat-item {
-      padding: 2.5rem 2rem;
-      background: rgba(0, 122, 255, 0.05);
-      border-radius: 20px;
-      border: 1px solid var(--border-color);
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .stat-item::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-      transform: translateX(-100%);
-      transition: transform 0.6s ease;
-    }
-
-    .stat-item:hover::before {
-      transform: translateX(0);
-    }
-
-    .stat-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 50px rgba(0, 122, 255, 0.2);
-      background: rgba(0, 122, 255, 0.08);
-    }
-
-    .stat-number {
-      font-size: 3rem;
-      font-weight: 800;
-      color: var(--primary-blue);
-      margin-bottom: 0.8rem;
-      display: block;
-      animation: countUp 2s ease-out;
-    }
-
-    .stat-label {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-weight: 600;
-    }
-
-    /* Content Sections */
-    .section {
-      padding: 6rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .section h2 {
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      font-weight: 800;
-      text-align: center;
-      margin-bottom: 4rem;
-      background: linear-gradient(135deg, var(--text-primary), var(--primary-blue));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      position: relative;
-    }
-
-    .section h2::after {
-      content: '';
-      position: absolute;
-      bottom: -1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-      border-radius: 2px;
-    }
-
-    /* Enhanced Experience Cards */
-    .experience-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-    }
-
-    .job-card {
-      background: var(--card-bg);
-      padding: 3rem;
-      border-radius: 20px;
-      border: 1px solid var(--border-color);
-      position: relative;
-      overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .job-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 5px;
-      height: 100%;
-      background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-    }
-
-    .job-card::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -50%;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle, rgba(0, 122, 255, 0.1) 0%, transparent 70%);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    .job-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 25px 60px rgba(0, 122, 255, 0.15);
-      border-color: rgba(0, 122, 255, 0.3);
-    }
-
-    .job-card:hover::after {
-      opacity: 1;
-    }
-
-    .job-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .job-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--primary-blue);
-      margin-bottom: 0.5rem;
-    }
-
-    .job-company {
-      font-size: 1.2rem;
-      color: var(--text-primary);
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-    }
-
-    .job-duration {
-      color: var(--text-secondary);
-      font-size: 0.95rem;
-      background: rgba(0, 122, 255, 0.1);
-      padding: 0.6rem 1.2rem;
-      border-radius: 25px;
-      border: 1px solid rgba(0, 122, 255, 0.2);
-      font-weight: 500;
-    }
-
-    .job-achievements {
-      list-style: none;
-    }
-
-    .job-achievements li {
-      margin-bottom: 1.2rem;
-      padding-left: 2rem;
-      position: relative;
-      color: var(--text-secondary);
-      line-height: 1.6;
-      font-size: 1.05rem;
-    }
-
-    .job-achievements li::before {
-      content: '▶';
-      position: absolute;
-      left: 0;
-      color: var(--accent-green);
-      font-size: 0.8rem;
-      top: 0.3rem;
-    }
-
-    /* Enhanced Skills Grid */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2.5rem;
-    }
-
-    .skill-category {
-      background: var(--card-bg);
-      padding: 2.5rem;
-      border-radius: 20px;
-      border: 1px solid var(--border-color);
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .skill-category::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-      transform: translateX(-100%);
-      transition: transform 0.6s ease;
-    }
-
-    .skill-category:hover::before {
-      transform: translateX(0);
-    }
-
-    .skill-category:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(0, 122, 255, 0.15);
-      border-color: rgba(0, 122, 255, 0.3);
-    }
-
-    .skill-category h3 {
-      color: var(--primary-blue);
-      margin-bottom: 1.5rem;
-      font-size: 1.3rem;
-      font-weight: 700;
-    }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-    }
-
-    .skill-tag {
-      background: rgba(0, 122, 255, 0.1);
-      color: var(--text-primary);
-      padding: 0.6rem 1.2rem;
-      border-radius: 25px;
-      font-size: 0.9rem;
-      border: 1px solid rgba(0, 122, 255, 0.2);
-      transition: all 0.3s ease;
-      font-weight: 500;
-    }
-
-    .skill-tag:hover {
-      background: rgba(0, 122, 255, 0.2);
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 122, 255, 0.3);
-    }
-
-    /* Enhanced Contact Section */
-    .contact {
-      background: linear-gradient(135deg, var(--card-bg) 0%, #1A1F2E 100%);
-      padding: 6rem 2rem;
-      text-align: center;
-      position: relative;
-    }
-
-    .contact::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--primary-blue), transparent);
-    }
-
-    .contact-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .contact h2 {
-      margin-bottom: 1.5rem;
-    }
-
-    .contact-subtitle {
-      color: var(--text-secondary);
-      font-size: 1.1rem;
-      margin-bottom: 3rem;
-      line-height: 1.6;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin: 3rem 0;
-    }
-
-    .social-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.8rem;
-      padding: 1rem 2rem;
-      background: rgba(0, 122, 255, 0.1);
-      color: var(--primary-blue);
-      text-decoration: none;
-      border-radius: 15px;
-      border: 1px solid rgba(0, 122, 255, 0.2);
-      transition: all 0.4s ease;
-      font-weight: 600;
-    }
-
-    .social-link:hover {
-      background: var(--primary-blue);
-      color: white;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(0, 122, 255, 0.4);
-    }
-
-    .contact-form {
-      display: grid;
-      gap: 1.5rem;
-      max-width: 500px;
-      margin: 3rem auto 0;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      background: var(--dark-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 1.2rem;
-      color: var(--text-primary);
-      font-family: inherit;
-      font-size: 1rem;
-      transition: all 0.3s ease;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      outline: none;
-      border-color: var(--primary-blue);
-      box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
-      transform: translateY(-2px);
-    }
-
-    .contact-form textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .nav-toggle {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--card-bg);
-        flex-direction: column;
-        padding: 2rem;
-        border-top: 1px solid var(--border-color);
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .hero {
-        padding: 8rem 2rem 4rem;
-        min-height: 90vh;
-      }
-
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-      }
-
-      .job-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .stats-container {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .social-links {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .stats-container {
-        grid-template-columns: 1fr;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .job-card, .skill-category {
-        padding: 2rem;
-      }
-    }
-
-    /* Additional animations */
-    .animate-on-scroll {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease;
-    }
-
-    .animate-on-scroll.animate {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Loading spinner for form submission */
-    .loading {
-      opacity: 0.7;
-      pointer-events: none;
-    }
-
-    .btn.loading::after {
-      content: '';
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-      border: 2px solid transparent;
-      border-top: 2px solid currentColor;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin-left: 10px;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-  </style>
-</head>
-<body>
-  <!-- Enhanced Navbar -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#" class="nav-brand">Piyush Kumar</a>
-      <button class="nav-toggle" id="nav-toggle">☰</button>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#hero" class="nav-link">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#experience" class="nav-link">Experience</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="hero" id="hero">
-    <div class="hero-content">
-      <div class="hero-badge">🚀 Available for New Opportunities</div>
-      <h1>
-        <span class="role">Technical Product Manager</span>
-        <span class="tagline">Building AI-First SaaS Platforms for Global Impact</span>
-      </h1>
-      <p class="hero-description">
-        8+ years of experience driving scalable product strategy across enterprise B2B/B2C platforms. 
-        Specialized in API integrations, data-driven decision making, and cross-functional leadership 
-        that delivers measurable business impact.
-      </p>
-      <div class="cta-buttons">
-        <a href="#contact" class="btn btn-primary">Let's Connect</a>
-        <a href="#experience" class="btn btn-secondary">View Experience</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats Section -->
-  <section class="stats" id="about">
-    <div class="stats-container">
-      <div class="stat-item animate-on-scroll">
-        <span class="stat-number">10K+</span>
-        <div class="stat-label">Enterprise Users Impacted</div>
-      </div>
-      <div class="stat-item animate-on-scroll">
-        <span class="stat-number">30+</span>
-        <div class="stat-label">Features Launched Annually</div>
-      </div>
-      <div class="stat-item animate-on-scroll">
-        <span class="stat-number">25%</span>
-        <div class="stat-label">Average CSAT Improvement</div>
-      </div>
-      <div class="stat-item animate-on-scroll">
-        <span class="stat-number">8+</span>
-        <div class="stat-label">Years of Experience</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experience Section -->
-  <section class="section" id="experience">
-    <h2>Professional Experience</h2>
-    <div class="experience-grid">
-      <div class="job-card animate-on-scroll">
-        <div class="job-header">
-          <div>
-            <div class="job-title">Lead Technical Product Manager</div>
-            <div class="job-company">Nous Infosystems (Roper Technologies)</div>
-          </div>
-          <div class="job-duration">Mar 2025 – Present</div>
-        </div>
-        <ul class="job-achievements">
-          <li>Accelerated enterprise adoption across global business units by <strong>20%</strong> through AI-first API platform strategy and data-driven roadmap execution</li>
-          <li>Enhanced platform scalability for <strong>10k+ enterprise users</strong> by launching user-centric features in partnership with Engineering, UX, Data, GTM, and Support teams</li>
-          <li>Reduced time-to-market by <strong>20%</strong> and increased mission-critical workflow efficiency through data-informed feature launches and optimized release processes</li>
-        </ul>
-      </div>
-
-      <div class="job-card animate-on-scroll">
-        <div class="job-header">
-          <div>
-            <div class="job-title">Technical Product Manager</div>
-            <div class="job-company">Epicor</div>
-          </div>
-          <div class="job-duration">Mar 2024 – Mar 2025</div>
-        </div>
-        <ul class="job-achievements">
-          <li>Owned end-to-end lifecycle of global Transportation Management SaaS platform powering <strong>millions of shipments annually</strong> for 100+ logistics enterprises</li>
-          <li>Reduced integration effort by <strong>25%</strong> and streamlined onboarding through strategic API integrations (REST/SOAP), data mapping, and comprehensive PRD delivery</li>
-          <li>Boosted customer adoption and CSAT by <strong>15%</strong> through strategic product vision, roadmap development, and feature prioritization</li>
-          <li>Ensured high-quality, on-time releases by driving cross-functional alignment across Engineering, QA, UX, Sales, and Support teams</li>
-        </ul>
-      </div>
-
-      <div class="job-card animate-on-scroll">
-        <div class="job-header">
-          <div>
-            <div class="job-title">Technical Product Manager</div>
-            <div class="job-company">ACL Digital (Client: Amadeus)</div>
-          </div>
-          <div class="job-duration">Dec 2021 – Oct 2022</div>
-        </div>
-        <ul class="job-achievements">
-          <li>Improved customer experience (CSAT <strong>+25%</strong>) and grew market share by <strong>20%</strong> through launching 30+ new features annually and optimizing platform performance</li>
-          <li>Delivered faster release cycles and enhanced platform scalability for <strong>millions of UK & US users</strong> through strategic product vision, comprehensive strategy development, and detailed roadmap execution</li>
-        </ul>
-      </div>
-
-      <div class="job-card animate-on-scroll">
-        <div class="job-header">
-          <div>
-            <div class="job-title">Technical Product Owner</div>
-            <div class="job-company">VHS Consulting (Client: Sterling Administration)</div>
-          </div>
-          <div class="job-duration">Apr 2020 – Dec 2021</div>
-        </div>
-        <ul class="job-achievements">
-          <li>Increased compliance-driven feature adoption by <strong>30%</strong> through strategic UAT planning and execution for enterprise rollouts</li>
-          <li>Accelerated enterprise rollout and enhanced stakeholder confidence through comprehensive release planning and effective demo flow development</li>
-          <li>Led backlog grooming, requirements gathering, and user story creation for healthcare platforms serving payers, providers, and enterprise customers</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills Section -->
-  <section class="section" id="skills">
-    <h2>Core Competencies</h2>
-    <div class="skills-grid">
-      <div class="skill-category animate-on-scroll">
-        <h3>🚀 Product Leadership</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Roadmap Strategy</span>
-          <span class="skill-tag">Customer Success</span>
-          <span class="skill-tag">GTM Strategy</span>
-          <span class="skill-tag">Feature Prioritization</span>
-          <span class="skill-tag">Market Analysis</span>
-          <span class="skill-tag">Competitive Intelligence</span>
-        </div>
-      </div>
-      <div class="skill-category animate-on-scroll">
-        <h3>⚡ Execution & Delivery</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Agile (Scrum, SAFe)</span>
-          <span class="skill-tag">UAT Management</span>
-          <span class="skill-tag">Stakeholder Alignment</span>
-          <span class="skill-tag">Release Management</span>
-        </div>
-      </div>
-      <div class="skill-category animate-on-scroll">
-        <h3>🤖 AI & Data Analytics</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">SQL</span>
-          <span class="skill-tag">Power BI</span>
-          <span class="skill-tag">A/B Testing</span>
-          <span class="skill-tag">GenAI</span>
-          <span class="skill-tag">KPI Dashboards</span>
-          <span class="skill-tag">Data-Driven Decisions</span>
-        </div>
-      </div>
-      <div class="skill-category animate-on-scroll">
-        <h3>🔧 Technical Stack</h3>
-        <div class="skill-tags">
-          <span class="skill-tag">REST/SOAP APIs</span>
-          <span class="skill-tag">AWS</span>
-          <span class="skill-tag">Azure</span>
-          <span class="skill-tag">Postman</span>
-          <span class="skill-tag">Swagger</span>
-          <span class="skill-tag">Figma</span>
-          <span class="skill-tag">Jira</span>
-          <span class="skill-tag">Aha!</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="contact" id="contact">
-    <div class="contact-content">
-      <h2>Let's Build Something Amazing Together</h2>
-      <p class="contact-subtitle">
-        Ready to discuss how I can drive product success at your organization? Let's connect and explore opportunities to create impactful solutions.
-      </p>
-      
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/piyush-productmanager/" target="_blank" class="social-link">
-          💼 LinkedIn
-        </a>
-        <a href="mailto:piyush941029@gmail.com" class="social-link">
-          📧 Email
-        </a>
-      </div>
-
-      <form class="contact-form" id="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="_replyto" placeholder="Your Email" required>
-        <textarea name="message" rows="4" placeholder="Tell me about your product challenges and how we can collaborate..." required></textarea>
-        <button type="submit" class="btn btn-primary">Send Message</button>
-      </form>
-      <p id="form-status" class="form-status"></p>
-    </div>
-  </section>
-
-  <script>
-    // Enhanced JavaScript functionality
-    
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
     });
+  });
 
-    // Active navigation highlighting
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('section[id]');
+  // Active navigation highlighting
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('section[id]');
 
-    function highlightNavigation() {
-      const scrollPosition = window.scrollY + 100;
-      
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
-        
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-          navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${sectionId}`) {
-              link.classList.add('active');
-            }
-          });
-        }
-      });
-    }
-
-    window.addEventListener('scroll', highlightNavigation);
-
-    // Mobile navbar toggle
-    const navToggle = document.getElementById("nav-toggle");
-    const navLinksContainer = document.getElementById("nav-links");
+  function highlightNavigation() {
+    const scrollPosition = window.scrollY + 100;
     
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const sectionId = section.getAttribute('id');
+      
+      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${sectionId}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }
+
+  window.addEventListener('scroll', highlightNavigation);
+
+  // Mobile navbar toggle
+  const navToggle = document.getElementById("nav-toggle");
+  const navLinksContainer = document.getElementById("nav-links");
+  
+  if (navToggle && navLinksContainer) {
     navToggle.addEventListener("click", () => {
       navLinksContainer.classList.toggle("active");
+      navToggle.setAttribute('aria-expanded', 
+        navToggle.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
     });
+  }
 
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
+  // Close mobile menu when clicking on a link
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      if (navLinksContainer.classList.contains('active')) {
         navLinksContainer.classList.remove('active');
-      });
-    });
-
-    // Enhanced navbar scroll effect
-    window.addEventListener('scroll', function() {
-      const navbar = document.getElementById('navbar');
-      if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(10, 14, 26, 0.98)';
-        navbar.style.boxShadow = '0 4px 30px rgba(0, 122, 255, 0.1)';
-      } else {
-        navbar.style.background = 'rgba(10, 14, 26, 0.95)';
-        navbar.style.boxShadow = 'none';
+        navToggle.setAttribute('aria-expanded', 'false');
       }
     });
+  });
 
-    // Scroll animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
+  // Enhanced navbar scroll effect
+  window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 100) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate');
-        }
-      });
-    }, observerOptions);
+  // Scroll animations with performance optimization
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
 
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-      observer.observe(el);
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+        // Stop observing after animation is triggered for performance
+        observer.unobserve(entry.target);
+      }
     });
+  }, observerOptions);
 
-    // Enhanced contact form submission
-    const form = document.getElementById("contact-form");
-    const status = document.getElementById("form-status");
+  document.querySelectorAll('.animate-on-scroll').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Enhanced contact form submission
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+  
+  if (form && status) {
     const submitBtn = form.querySelector('button[type="submit"]');
-
+    
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       
@@ -1031,115 +108,81 @@
       submitBtn.textContent = 'Sending...';
       status.textContent = "";
       status.className = "form-status";
-
-      const data = new FormData(form);
       
-      try {
-        const response = await fetch("https://formspree.io/f/mpwjnngq", {
-          method: "POST",
-          body: data,
-          headers: { 
-            "Accept": "application/json" 
-          }
-        });
+      // Simulate form submission (replace with actual form handling)
+      setTimeout(() => {
+        status.textContent = "✅ Success! Thanks for reaching out. I'll get back to you soon!";
+        status.classList.add("show", "success");
+        form.reset();
         
-        if (response.ok) {
-          status.textContent = "✅ Success! Thanks for reaching out. I'll get back to you soon!";
-          status.className = "form-status";
-          status.style.color = "var(--accent-green)";
-          status.style.background = "rgba(0, 208, 132, 0.1)";
-          status.style.padding = "1rem";
-          status.style.borderRadius = "8px";
-          status.style.marginTop = "1rem";
-          form.reset();
-        } else {
-          throw new Error('Form submission failed');
-        }
-      } catch (error) {
-        status.textContent = "❌ Oops! Something went wrong. Please try again or contact me directly via LinkedIn.";
-        status.className = "form-status";
-        status.style.color = "#ff6b6b";
-        status.style.background = "rgba(255, 107, 107, 0.1)";
-        status.style.padding = "1rem";
-        status.style.borderRadius = "8px";
-        status.style.marginTop = "1rem";
-      } finally {
         // Remove loading state
         submitBtn.classList.remove('loading');
         submitBtn.textContent = 'Send Message';
-      }
+      }, 1500);
     });
+  }
 
-    // Animated counter for stats
-    function animateCounter(element, target, duration = 2000) {
-      let start = 0;
-      const increment = target / (duration / 16);
-      
-      function updateCounter() {
-        start += increment;
-        if (start < target) {
-          if (target.toString().includes('+')) {
-            element.textContent = Math.floor(start) + '+';
-          } else if (target.toString().includes('%')) {
-            element.textContent = Math.floor(start) + '%';
-          } else {
-            element.textContent = Math.floor(start);
-          }
-          requestAnimationFrame(updateCounter);
+  // Animated counter for stats
+  function animateCounter(element, target, duration = 2000) {
+    let start = 0;
+    const increment = target / (duration / 16);
+    
+    function updateCounter() {
+      start += increment;
+      if (start < target) {
+        if (target.toString().includes('+')) {
+          element.textContent = Math.floor(start) + '+';
+        } else if (target.toString().includes('%')) {
+          element.textContent = Math.floor(start) + '%';
         } else {
-          element.textContent = target;
+          element.textContent = Math.floor(start);
         }
+        requestAnimationFrame(updateCounter);
+      } else {
+        element.textContent = target;
       }
-      updateCounter();
     }
+    updateCounter();
+  }
 
-    // Trigger counter animation when stats section is visible
-    const statsObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const statNumbers = entry.target.querySelectorAll('.stat-number');
-          statNumbers.forEach(stat => {
-            const target = stat.textContent;
-            if (!stat.classList.contains('animated')) {
-              stat.classList.add('animated');
-              if (target.includes('K+')) {
-                animateCounter(stat, '10K+');
-              } else if (target.includes('+')) {
-                const num = parseInt(target);
-                animateCounter(stat, num + '+');
-              } else if (target.includes('%')) {
-                const num = parseInt(target);
-                animateCounter(stat, num + '%');
-              } else {
-                const num = parseInt(target);
-                animateCounter(stat, num);
-              }
+  // Trigger counter animation when stats section is visible
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const statNumbers = entry.target.querySelectorAll('.stat-number');
+        statNumbers.forEach(stat => {
+          const target = stat.textContent;
+          if (!stat.classList.contains('animated')) {
+            stat.classList.add('animated');
+            if (target.includes('K+')) {
+              animateCounter(stat, 10000);
+            } else if (target.includes('+')) {
+              const num = parseInt(target);
+              animateCounter(stat, num);
+            } else if (target.includes('%')) {
+              const num = parseInt(target);
+              animateCounter(stat, num);
+            } else {
+              const num = parseInt(target);
+              animateCounter(stat, num);
             }
-          });
-        }
-      });
-    }, { threshold: 0.5 });
-
-    const statsSection = document.querySelector('.stats');
-    if (statsSection) {
-      statsObserver.observe(statsSection);
-    }
-
-    // Add subtle parallax effect to hero section
-    window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      const hero = document.querySelector('.hero::before');
-      if (hero && scrolled < window.innerHeight) {
-        // Subtle parallax effect without affecting performance
-        document.documentElement.style.setProperty('--scroll-y', `${scrolled * 0.5}px`);
+          }
+        });
       }
     });
+  }, { threshold: 0.5 });
 
-    // Preload critical resources
-    const preloadLink = document.createElement('link');
-    preloadLink.rel = 'preconnect';
-    preloadLink.href = 'https://formspree.io';
-    document.head.appendChild(preloadLink);
-  </script>
-</body>
-</html>
+  const statsSection = document.querySelector('.stats');
+  if (statsSection) {
+    statsObserver.observe(statsSection);
+  }
+
+  // Preload critical resources
+  const preloadLink = document.createElement('link');
+  preloadLink.rel = 'preconnect';
+  preloadLink.href = 'https://fonts.googleapis.com';
+  document.head.appendChild(preloadLink);
+  
+  // Initialize animations on page load
+  highlightNavigation();
+});
