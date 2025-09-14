@@ -55,7 +55,7 @@ html {
 .hero {
   text-align: center;
   padding: 3rem 1rem;
-  background: #1a1625;
+  background: #0f172a;
   color: white;
 }
 
@@ -68,7 +68,7 @@ html {
    font-size: 7rem; 
    font-weight: bold;
    line-height: 2;
-   color: #1a1625;
+   color: #0f172a;
    display: inline-block;  /* Sometimes helps with sizing */
 }
 
