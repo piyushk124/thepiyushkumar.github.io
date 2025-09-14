@@ -15,7 +15,7 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #222;
+  background: #0f172a;
   color: white;
   padding: 0.8rem 1.5rem;
   position: sticky;
@@ -83,7 +83,7 @@ section {
 .job, .project-card {
   margin-bottom: 2rem;
   padding: 1rem;
-  background: #fff;
+  background: #0f172a;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -110,7 +110,7 @@ ul {
 }
 
 .contact-form button {
-  background: #00b4d8;
+  background: #0f172a;
   color: white;
   padding: 0.8rem;
   border: none;
@@ -121,7 +121,7 @@ ul {
 }
 
 .contact-form button:hover {
-  background: #0096c7;
+  background: #0f172a;
 }
 
 .note {
@@ -149,19 +149,19 @@ ul {
 footer {
   text-align: center;
   padding: 1.5rem;
-  background: #222;
+  background: #0f172a;
   color: white;
 }
 
 /* Dark Mode */
 body.dark {
-  background: #121212;
+  background: #0f172a;
   color: #ddd;
 }
 
 body.dark .job, 
 body.dark .project-card {
-  background: #1e1e1e;
+  background: #0f172a;
   box-shadow: 0 2px 6px rgba(255,255,255,0.05);
 }
 
