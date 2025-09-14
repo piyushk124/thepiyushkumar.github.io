@@ -4,138 +4,383 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Piyush Kumar | Technical Product Manager</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="nav-brand">Piyush Kumar</div>
-    <button class="nav-toggle" id="nav-toggle">☰</button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <!-- Dark Mode Toggle -->
-  <button id="theme-toggle">🌙 Dark Mode</button>
+    :root {
+      --primary-blue: #007AFF;
+      --secondary-blue: #00D4FF;
+      --dark-bg: #0A0E1A;
+      --card-bg: #1A1F2E;
+      --text-primary: #FFFFFF;
+      --text-secondary: #A8B2D1;
+      --accent-green: #00D084;
+      --border-color: #2A3441;
+    }
 
-  <!-- Hero Section -->
-  <header class="hero">
-    </h1><span>💡Technical Product Manager</span> | SaaS, AI & API Platforms | Driving Scalable, Data-Informed Product Strategy & Global Impact🚀</h1>
-  </header>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      background: var(--dark-bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-  <!-- About Section -->
-  <section class="about" id="about">
-    <h2>About Me</h2>
-    <div class="aboutme">
-      <p>
-      <strong>Technical Product Manager</strong> with 8+ years of experience building
-      <strong>AI-first, API-driven enterprise SAAS B2B and B2C platforms across global markets</strong>. I specialize in product strategy,
-      data-driven decision-making, and cross-functional leadership.
-      </p>
-    <ul>
-      <li>Scaled platforms for 10k+ enterprise users</li>
-      <li>Launched 30+ features annually (+30% engagement, +25% CSAT)</li>
-      <li>Reduced time-to-market by 20% and integration effort by 25%</li>
-    </ul>
-    </div>
-  </section>
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 14, 26, 0.95);
+      backdrop-filter: blur(20px);
+      z-index: 1000;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
 
-  <!-- Experience Section -->
-  <section class="experience" id="experience">
-    <h2>Work Experience</h2>
-    <div class="job">
-      <h3>Lead Technical Product Manager | Nous Infosystems (Roper Technologies)</h3>
-      <span>Mar 2025 – Present | Bangalore</span>
-      <ul>
-        <li>Accelerated enterprise adoption across global business units by 20% by defining andexecuting an AI-first API platform strategy with a data-driven roadmap and releaseexecution.</li>
-        <li>Improved scalability and usability for 10k+ enterprise users by launching user-first featuresin partnership with Engineering, UX, Data, GTM, and Support.</li>
-        <li>Reduced time-to-market by 20% and increased mission-critical workflow efficiency bylaunching data-informed features and optimizing release processes.</li>
-      </ul>
-    </div>
-    <div class="job">
-      <h3>Technical Product Manager | Epicor</h3>
-      <span>Mar 2024 – Mar 2025 | Bangalore</span>
-      <ul>
-        <li>Owned the end-to-end lifecycle of a global Transportation Management SaaS platformpowering millions of shipments annually for 100+ logistics enterprises by defining productvision, roadmap, and delivery.</li>
-        <li>Reduced integration effort by 25% and streamlined onboarding by leading API integrations(REST/SOAP), data mapping, and PRD delivery.</li>
-        <li>Boosted customer adoption and CSAT by 15% by defining product vision, roadmap, and featureprioritization.</li>
-        <li>Ensured high-quality, on-time releases by driving cross-functional alignment acrossEngineering, QA, UX, Sales, and Support.</li>
-      </ul>
-    </div>
-    <div class="job">
-      <h3>Technical Product Manager | ACL Digital (Client- Amadeus)</h3>
-      <span>Dec 2021 – Oct 2022 | Bangalore</span>
-      <ul>
-        <li>Improved customer experience (CSAT +25%) and grew market share by 20% by launching30+ new features within a year and optimizing platform performance.</li>
-        <li>Delivered faster release cycles and platform scalability for millions of UK & US users bydefining product vision, strategy, and roadmap.</li>
-      </ul>
-    </div>
-    <div class="job">
-      <h3>Technical Product Owner | VHS Consulting (Client- Sterling Administration)</h3>
-      <span>Apr 2020 – Dec 2021 | Bangalore</span>
-      <ul>
-        <li>Increased compliance-driven feature adoption by 30% by driving UAT planning andexecution for enterprise rollouts.</li>
-        <li>Accelerated enterprise rollout and enhanced stakeholder confidence by defining releaseplans and demo flows.</li>
-        <li>Led backlog grooming, requirements gathering, and user story creation for healthcareplatforms serving payers, providers, and enterprise customers.</li>
-      </ul>
-    </div>
-    <div class="job">
-      <h3>Senior Business Analyst | Syntel | Genpact | Osysseus Solutions</h3>
-      <span>Mar 2014 – Aug 2019 | Chennai | Noida | Bangalore</span>
-      <ul>
-        <li>Impacted tens of thousands of end-users by delivering BRDs, wireframes, and user storiesfor enterprise applications across Travel, Retail, and Insurance domains.</li>
-        <li>Reduced release cycle time and improved delivery quality by 15% by supporting APIintegrations and product demos.</li>
-        <li>Ensured seamless alignment between business and engineering teams by facilitating Agileceremonies (planning, grooming, retrospectives).</li>
-      </ul>
-    </div>
-  </section>
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
 
+    .nav-brand {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
 
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
 
-  <!-- Skills Section -->
-  <section class="skills" id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Product Leadership:</strong> Roadmap Strategy & Planning, Customer Success, GTM, Prioritization</li>
-      <li><strong>Execution:</strong> Agile (Scrum, SAFe), UAT, Stakeholder Management</li>
-      <li><strong>AI & Data:</strong> SQL, Power BI, A/B Testing, GenAI, KPI Dashboards</li>
-      <li><strong>Tech:</strong> REST/SOAP APIs, AWS, Azure, Postman, Swagger, Figma, Jira, Aha</li>
-    </ul>
-  </section>
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+    }
 
-  <!-- Education -->
-  <section class="education" id="education">
-    <h2>Education</h2>
-    <ul>
-      <li>B.Tech (Computer Science) – Lovely Professional University 2013</li>
-      <li>CPO Executive Program (AI Product Leadership) – Indian Institute of Management Kozhikode 2025-2026</li>
-      <li>AI Generalist Accelerator – Outskill (Growth School) 2025</li>
-    </ul>
-  </section>
+    .nav-links a:hover {
+      color: var(--primary-blue);
+      background: rgba(0, 122, 255, 0.1);
+    }
 
-  <!-- Contact -->
-  <footer class="footer" id="contact">
-    <h2>Contact Me</h2>
-    <p>Let’s connect! You can reach out via LinkedIn or drop me a direct email below 👇</p>
-    <p>
-      🔗 <a href="https://www.linkedin.com/in/piyush-productmanager/" target="_blank">LinkedIn</a> | 
-      📧 <a href="mailto:piyush941029@gmail.com">Email</a>
-    </p>
-    <form id="contact-form" class="contact-form">
-      <input type="text" name="name" placeholder="Name" required>
-      <input type="email" name="_replyto" placeholder="Email" required>
-      <textarea name="message" rows="4" placeholder="Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <p id="form-status" class="form-status"></p>
-    <p class="note">⚡I’ll get back to you soon!</p>
-  </footer>
+    /* Hero Section */
+    .hero {
+      padding: 8rem 2rem 4rem;
+      text-align: center;
+      background: linear-gradient(135deg, var(--dark-bg) 0%, #1A1F2E 100%);
+      position: relative;
+      overflow: hidden;
+    }
 
-  <script src="script.js"></script>
-</body>
-</html>
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 20%, rgba(0, 122, 255, 0.1) 0%, transparent 50%);
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .hero .role {
+      background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero .tagline {
+      color: var(--text-secondary);
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+      color: white;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary-blue);
+      border: 2px solid var(--primary-blue);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 122, 255, 0.3);
+    }
+
+    /* Stats Section */
+    .stats {
+      padding: 4rem 2rem;
+      background: var(--card-bg);
+    }
+
+    .stats-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .stat-item {
+      padding: 2rem;
+      background: rgba(0, 122, 255, 0.05);
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-blue);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Content Sections */
+    .section {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 3rem;
+      background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Experience Cards */
+    .experience-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .job-card {
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .job-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    }
+
+    .job-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 122, 255, 0.1);
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .job-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--primary-blue);
+    }
+
+    .job-company {
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .job-duration {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      background: rgba(0, 122, 255, 0.1);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+    }
+
+    .job-achievements {
+      list-style: none;
+    }
+
+    .job-achievements li {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      position: relative;
+      color: var(--text-secondary);
+    }
+
+    .job-achievements li::before {
+      content: '▶';
+      position: absolute;
+      left: 0;
+      color: var(--accent-green);
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .skill-category {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    .skill-category:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(0, 122, 255, 0.1);
+    }
+
+    .skill-category h3 {
+      color: var(--primary-blue);
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-tag {
+      background: rgba(0, 122, 255, 0.1);
+      color: var(--text-primary);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      border: 1px solid rgba(0, 122, 255, 0.2);
+    }
+
+    /* Contact Section */
+    .contact {
+      background: var(--card-bg);
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .contact-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 1.5rem;
+      max-width: 500px;
+      margin: 2rem auto 0;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      background: var(--dark-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1rem;
+      color: var(--text-primary);
+      font-family: inherit;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--primary-blue);
+      box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
