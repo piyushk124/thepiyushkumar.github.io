@@ -127,15 +127,17 @@ body {
   color: var(--primary-blue);
 }
 
-/* Hero Section with Profile Picture */
+/* Hero Section */
 .hero {
   padding: 10rem 2rem 6rem;
+  text-align: center;
   background: var(--gradient-bg);
   position: relative;
   overflow: hidden;
   min-height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .hero::before {
@@ -162,18 +164,11 @@ body {
   }
 }
 
-.hero-container {
-  max-width: 1200px;
+.hero-content {
+  max-width: 900px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
   position: relative;
   z-index: 2;
-}
-
-.hero-content {
   animation: fadeInUp 1s ease-out;
 }
 
@@ -190,7 +185,7 @@ body {
 
 .hero-badge {
   display: inline-block;
-  background: rgba(极速加速器, 122, 255, 0.1);
+  background: rgba(0, 122, 255, 0.1);
   border: 1px solid rgba(0, 122, 255, 0.3);
   color: var(--primary-blue);
   padding: 0.5rem 1.5rem;
@@ -246,7 +241,7 @@ body {
     text-shadow: 0 0 20px rgba(0, 122, 255, 0.5);
   }
   to {
-    text-shadow: 极速加速器 0 30px rgba(0, 212, 255, 0.8);
+    text-shadow: 0 0 30px rgba(0, 212, 255, 0.8);
   }
 }
 
@@ -263,6 +258,9 @@ body {
   font-size: 1.1rem;
   color: var(--text-secondary);
   margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
   line-height: 1.6;
   animation: fadeInUp 1s ease-out 0.3s both;
 }
@@ -270,8 +268,9 @@ body {
 .cta-buttons {
   display: flex;
   gap: 1.5rem;
+  justify-content: center;
   margin-top: 3rem;
-  animation: fadeIn极速加速器 1s ease-out 0.6s both;
+  animation: fadeInUp 1s ease-out 0.6s both;
 }
 
 .btn {
@@ -293,7 +292,7 @@ body {
 .btn-primary {
   background: var(--gradient-primary);
   color: white;
-  box-shadow: 0 4px 20px rgba(0, 122, 极速加速器, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 122, 255, 0.3);
 }
 
 .btn-primary::before {
@@ -301,7 +300,7 @@ body {
   position: absolute;
   top: 0;
   left: -100%;
- 极速加速器 width: 100%;
+  width: 100%;
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   transition: left 0.5s;
@@ -332,89 +331,7 @@ body {
   transform: translateY(-1px);
 }
 
-/* Profile Picture Styles */
-.profile-picture {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: fadeInRight 1s ease-out;
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.profile-img-container {
-  position: relative;
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
-  background: var(--gradient-primary);
-  padding: 8px;
-  box-shadow: 0 20px 60px rgba(0, 122, 255, 0.3);
-  transition: all 0.4s ease;
-}
-
-.profile-img-container:hover {
-  transform: scale(1.03);
-  box-shadow: 0 25px 80px rgba(0, 122, 255, 0.4);
-}
-
-.profile-img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid var(--dark-bg);
-  background: linear-gradient(45deg, #2a3441, #3a4556);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--text-secondary);
-  font-size: 1.2rem;
-  overflow: hidden;
-}
-
-.profile-img.placeholder::before {
-  content: 'PK';
-  font-size: 5rem;
-  font-weight: 700;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.profile-status {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 24px;
-  height: 24px;
-  background: var(--accent-green);
-  border-radius: 50%;
- 极速加速器 border: 3px solid var(--card-bg);
-  box-shadow: 0 0 0 3px rgba(0, 208, 132, 0.3);
-  animation: pulseStatus 2s infinite;
-}
-
-@keyframes pulseStatus {
-  0%, 100% {
-    box-shadow: 0 0 0 3极速加速器 rgba(0, 208, 132, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 0 6px rgba(0, 208, 132, 0.1);
-  }
-}
-
-/* Stats Section */
+/* Enhanced Stats Section */
 .stats {
   padding: 6rem 2rem;
   background: var(--card-bg);
@@ -449,7 +366,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, min极速加速器max(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   text-align: center;
   position: relative;
@@ -461,7 +378,7 @@ body {
   background: rgba(0, 122, 255, 0.05);
   border-radius: 20px;
   border: 1px solid var(--border-color);
-  transition: all 极速加速器.4s ease;
+  transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(10px);
@@ -518,6 +435,7 @@ body {
   color: var(--primary-blue);
   margin-bottom: 0.8rem;
   display: block;
+  animation: countUp 2s ease-out;
   position: relative;
   z-index: 3;
   text-shadow: 0 2px 10px rgba(0, 122, 255, 0.3);
@@ -527,16 +445,16 @@ body {
   color: var(--text-secondary);
   font-size: 0.95rem;
   text-transform: uppercase;
-  letter-spacing: 1.5极速加速器x;
+  letter-spacing: 1.5px;
   font-weight: 600;
   position: relative;
- 极速加速器 z-index: 3;
+  z-index: 3;
 }
 
 /* Content Sections */
 .section {
   padding: 6rem 2rem;
-  max-width: 1200极速加速器px;
+  max-width: 1200px;
   margin: 0 auto;
   position: relative;
 }
@@ -554,7 +472,7 @@ body {
   animation: fadeInUp 0.8s ease-out;
 }
 
-.section极速加速器 h2::after {
+.section h2::after {
   content: '';
   position: absolute;
   bottom: -1rem;
@@ -615,7 +533,7 @@ body {
   right: -50%;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(0, 122, 255, 0.1极速加速器) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 122, 255, 0.1) 0%, transparent 70%);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -663,7 +581,7 @@ body {
   font-size: 1.2rem;
   color: var(--text-primary);
   font-weight: 600;
-  margin-bottom: 极速加速器.3rem;
+  margin-bottom: 0.3rem;
   transition: all 0.3s ease;
 }
 
@@ -712,10 +630,10 @@ body {
   color: var(--accent-green);
   font-size: 0.8rem;
   top: 0.3rem;
-  transition: all 0.3极速加速器s ease;
+  transition: all 0.3s ease;
 }
 
-.job-card:hover .job-achievements极速加速器 li::before {
+.job-card:hover .job-achievements li::before {
   color: var(--primary-blue);
   transform: translateX(3px);
 }
@@ -756,7 +674,7 @@ body {
   transform: translateY(0);
 }
 
-.skill极速加速器-category::before {
+.skill-category::before {
   content: '';
   position: absolute;
   top: 0;
@@ -764,7 +682,7 @@ body {
   right: 0;
   height: 3px;
   background: var(--gradient-primary);
-  transform: translate极速加速器X(-100%);
+  transform: translateX(-100%);
   transition: transform 0.6s ease;
 }
 
@@ -869,14 +787,14 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  height: 1极速加速器px;
+  height: 1px;
   background: linear-gradient(90deg, transparent, var(--primary-blue), transparent);
 }
 
 .contact::after {
   content: '';
   position: absolute;
- 极速加速器 top: 0;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -911,7 +829,7 @@ body {
   justify-content: center;
   gap: 1.5rem;
   margin: 3rem 0;
-  animation: fadeInUp 0.8s ease-out 0.4极速加速器s both;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
 .social-link {
@@ -944,7 +862,7 @@ body {
 }
 
 .social-link:hover::before {
-  left: 极速加速器0;
+  left: 0;
 }
 
 .social-link:hover {
@@ -971,8 +889,8 @@ body {
   color: var(--text-primary);
   font-family: inherit;
   font-size: 1rem;
-  transition: all 0.3s极速加速器 ease;
-  backdrop-filter: blur(极速加速器10px);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
   position: relative;
 }
 
@@ -1023,64 +941,6 @@ body {
   border: 1px solid rgba(255, 107, 107, 0.2);
 }
 
-/* Footer */
-.footer {
-  background: var(--dark-bg);
-  padding: 3rem 2rem;
-  text-align: center;
-  border-top: 1px solid var(--border-color);
-  position: relative;
-  overflow: hidden;
-}
-
-.footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--primary-blue), transparent);
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-}
-
-.footer-text {
-  color: var(--text-secondary);
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.footer-links {
-  display:极速加速器 flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-.footer-link {
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-weight: 500;
-}
-
-.footer-link:hover {
-  color: var(--primary-blue);
-  transform: translateY(-2px);
-}
-
-.footer-copyright {
- 极速加速器 color: var(--text-secondary);
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
 /* Loading States */
 .loading {
   opacity: 0.7;
@@ -1115,24 +975,65 @@ body {
   transform: translateY(0);
 }
 
-/* Responsive Design */
-@media (max-width: 968px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    text-align: center;
-  }
-  
-  .profile-picture {
-    order: -1;
-  }
-  
-  .profile-img-container {
-    width: 280px;
-    height: 280px;
-  }
+/* Footer */
+.footer {
+  background: var(--dark-bg);
+  padding: 3rem 2rem;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
 }
 
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary-blue), transparent);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-text {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.footer-link:hover {
+  color: var(--primary-blue);
+  transform: translateY(-2px);
+}
+
+.footer-copyright {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .nav-links {
     position: fixed;
@@ -1181,7 +1082,7 @@ body {
   }
   
   .skills-grid {
-    grid-template-columns: 1极速加速器fr;
+    grid-template-columns: 1fr;
   }
   
   .job-header {
@@ -1197,28 +1098,118 @@ body {
   .section {
     padding: 4rem 1.5rem;
   }
-  
-  .profile-img-container {
-    width: 240px;
-    height: 240px;
-  }
-  
-  .job-card, .skill-category {
-    padding: 2rem;
+}
+
+/* Dark mode preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-secondary: #A8B2D1;
   }
 }
 
-@media (max-width: 480px) {
-  .profile-img-container {
-    width: 200px;
-    height: 200px;
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --primary-blue: #0066CC;
+    --secondary-blue: #00B8E6;
+    --accent-green: #00B875;
   }
-  
-  .hero h1 {
-    font-size: 2.2rem;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
-  
-  .stats-container {
-    grid-template-columns: 1fr;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-blue);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-blue);
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+/* Selection styles */
+::selection {
+  background: rgba(0, 122, 255, 0.3);
+  color: white;
+}
+
+::-moz-selection {
+  background: rgba(0, 122, 255, 0.3);
+  color: white;
+}
+
+/* Animation for counting up stats */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Additional utility classes */
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.highlight {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: rgba(0, 122, 255, 0.2);
+  z-index: -1;
+  transform: skewX(-15deg);
+  transition: all 0.3s ease;
+}
+
+.highlight:hover::after {
+  height: 100%;
+  background: rgba(0, 122, 255, 0.3);
 }
