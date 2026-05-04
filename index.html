@@ -11,131 +11,140 @@
 
 <!-- NAV -->
 <nav class="navbar">
-  <div class="nav-container">
-    <a href="#" class="nav-brand">Piyush Kumar</a>
-    <ul class="nav-links">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#work">Product Work</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+  <div class="container nav-container">
+    <div class="nav-brand">Piyush Kumar</div>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="hero">
-  <div class="hero-content">
-    <h1>Lead Product Manager | Platform, APIs & Data Products</h1>
+<section class="hero">
+  <div class="container">
+    <h1>Lead Product Manager</h1>
+    <p class="subtitle">Platform • APIs • Enterprise SaaS</p>
 
-    <p class="hero-description">
+    <p class="hero-desc">
       I build scalable enterprise platforms that simplify integrations, improve adoption, and drive measurable business outcomes.
     </p>
 
     <div class="metrics">
-      <div>⬇ 25% Integration Effort</div>
-      <div>⬆ 20% Product Adoption</div>
+      <div>↓ 25% Integration Effort</div>
+      <div>↑ 20% Product Adoption</div>
       <div>100+ Enterprise Customers</div>
       <div>Millions of Transactions</div>
     </div>
 
-    <div class="cta-buttons">
-      <a href="#work" class="btn btn-primary">View Product Work</a>
-      <a href="#contact" class="btn btn-secondary">Connect</a>
+    <div class="cta">
+      <a href="#work" class="btn primary">View Work</a>
+      <a href="#contact" class="btn secondary">Contact</a>
     </div>
   </div>
 </section>
 
 <!-- CASE STUDIES -->
 <section id="work" class="section">
-  <h2>Featured Product Work</h2>
+  <div class="container">
+    <h2>Featured Product Work</h2>
 
-  <div class="case-study">
-    <h3>API Platform Standardization</h3>
-    <p><strong>Problem:</strong> Enterprise integrations were slow and inconsistent across customers.</p>
-    <p><strong>Solution:</strong> Designed standardized API framework and data mapping layer.</p>
-    <p><strong>Impact:</strong></p>
-    <ul>
-      <li>Reduced integration effort by 25%</li>
-      <li>Faster onboarding for enterprise clients</li>
-    </ul>
-    <p><strong>Key Tradeoff:</strong> Standardization vs customization flexibility</p>
+    <div class="card">
+      <h3>API Platform Standardization</h3>
+      <p><strong>Problem:</strong> Slow, inconsistent enterprise integrations</p>
+      <p><strong>Solution:</strong> Standardized API & data mapping framework</p>
+      <ul>
+        <li>25% reduction in integration effort</li>
+        <li>Faster enterprise onboarding</li>
+      </ul>
+      <p class="insight">Tradeoff: Standardization vs flexibility</p>
+    </div>
+
+    <div class="card">
+      <h3>Product Adoption Optimization</h3>
+      <p><strong>Problem:</strong> Low feature adoption</p>
+      <p><strong>Solution:</strong> Improved onboarding + automation</p>
+      <ul>
+        <li>+20% adoption</li>
+        <li>+15% CSAT</li>
+      </ul>
+      <p class="insight">Insight: Onboarding > new features</p>
+    </div>
   </div>
-
-  <div class="case-study">
-    <h3>Product Adoption Optimization</h3>
-    <p><strong>Problem:</strong> Low adoption of platform modules</p>
-    <p><strong>Solution:</strong> Redesigned onboarding + introduced workflow automation</p>
-    <p><strong>Impact:</strong></p>
-    <ul>
-      <li>+20% increase in product adoption</li>
-      <li>+15% improvement in CSAT</li>
-    </ul>
-    <p><strong>Key Insight:</strong> Adoption improved more via onboarding than new features</p>
-  </div>
-
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience" class="section">
-  <h2>Experience</h2>
+  <div class="container">
+    <h2>Experience</h2>
 
-  <div class="job">
-    <h3>Lead Product Manager</h3>
-    <p>Nous Infosystems | Roper Technologies</p>
-    <ul>
-      <li>Defined platform strategy for API-driven enterprise SaaS</li>
-      <li>Increased product adoption by ~20%</li>
-      <li>Owned roadmap across multiple teams</li>
-    </ul>
+    <div class="job">
+      <h3>Lead Product Manager</h3>
+      <p>Nous Infosystems | Roper Technologies</p>
+      <ul>
+        <li>Defined platform strategy for API-driven SaaS</li>
+        <li>Increased adoption by ~20%</li>
+        <li>Owned roadmap across multiple teams</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <h3>Senior Product Manager</h3>
+      <p>Epicor</p>
+      <ul>
+        <li>Reduced integration effort by 25%</li>
+        <li>Improved adoption and customer experience</li>
+      </ul>
+    </div>
+
   </div>
-
-  <div class="job">
-    <h3>Senior Product Manager</h3>
-    <p>Epicor</p>
-    <ul>
-      <li>Reduced integration effort by 25%</li>
-      <li>Improved adoption and customer satisfaction</li>
-    </ul>
-  </div>
-
 </section>
 
 <!-- SKILLS -->
 <section id="skills" class="section">
-  <h2>Core Strengths</h2>
+  <div class="container">
+    <h2>Core Strengths</h2>
 
-  <ul>
-    <li>Product Strategy & Roadmap</li>
-    <li>Platform & API Products</li>
-    <li>Enterprise SaaS</li>
-    <li>Product Analytics & Data</li>
-    <li>Cross-functional Leadership</li>
-  </ul>
-
+    <div class="skills">
+      <span>Product Strategy</span>
+      <span>Roadmap & Prioritization</span>
+      <span>API Platforms</span>
+      <span>Enterprise SaaS</span>
+      <span>Product Analytics</span>
+      <span>SQL</span>
+      <span>Cross-functional Leadership</span>
+    </div>
+  </div>
 </section>
 
 <!-- THINKING -->
 <section class="section">
-  <h2>How I Build Products</h2>
-
-  <ul>
-    <li>Start with customer problems, not features</li>
-    <li>Prioritize based on impact vs effort</li>
-    <li>Design scalable platforms, not one-off solutions</li>
-    <li>Use data and feedback loops to iterate</li>
-  </ul>
+  <div class="container">
+    <h2>How I Build Products</h2>
+    <ul class="thinking">
+      <li>Start with problems, not features</li>
+      <li>Prioritize based on impact</li>
+      <li>Design scalable platforms</li>
+      <li>Use data to iterate</li>
+    </ul>
+  </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="section">
-  <h2>Let’s Build Something Great</h2>
+  <div class="container">
+    <h2>Let’s Connect</h2>
+    <p>Open to product roles in platform, SaaS, and AI-driven products.</p>
 
-  <p>Open to platform, SaaS, and AI-driven product roles.</p>
-
-  <a href="mailto:piyush941029@gmail.com">Email Me</a>
-  <a href="https://www.linkedin.com/in/piyush-productmanager/">LinkedIn</a>
+    <div class="contact-links">
+      <a href="mailto:piyush941029@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/piyush-productmanager/" target="_blank">LinkedIn</a>
+    </div>
+  </div>
 </section>
 
+<script src="script.js"></script>
 </body>
 </html>
