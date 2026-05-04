@@ -1,141 +1,125 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Piyush Kumar | Lead Product Manager</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0d1117;
+  color: #e6edf3;
+}
 
-<body>
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 0 20px;
+}
 
-<!-- NAV -->
-<nav class="navbar">
-  <div class="nav-container">
-    <a href="#" class="nav-brand">Piyush Kumar</a>
-    <ul class="nav-links">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#work">Product Work</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+.section {
+  padding: 80px 0;
+  border-bottom: 1px solid #21262d;
+}
 
-<!-- HERO -->
-<section class="hero" id="hero">
-  <div class="hero-content">
-    <h1>Lead Product Manager | Platform, APIs & Data Products</h1>
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #0d1117;
+  border-bottom: 1px solid #30363d;
+}
 
-    <p class="hero-description">
-      I build scalable enterprise platforms that simplify integrations, improve adoption, and drive measurable business outcomes.
-    </p>
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+}
 
-    <div class="metrics">
-      <div>⬇ 25% Integration Effort</div>
-      <div>⬆ 20% Product Adoption</div>
-      <div>100+ Enterprise Customers</div>
-      <div>Millions of Transactions</div>
-    </div>
+.nav-links a {
+  margin-left: 20px;
+  color: #8b949e;
+  text-decoration: none;
+}
 
-    <div class="cta-buttons">
-      <a href="#work" class="btn btn-primary">View Product Work</a>
-      <a href="#contact" class="btn btn-secondary">Connect</a>
-    </div>
-  </div>
-</section>
+.nav-links a:hover {
+  color: white;
+}
 
-<!-- CASE STUDIES -->
-<section id="work" class="section">
-  <h2>Featured Product Work</h2>
+.hero {
+  text-align: center;
+  padding: 120px 0 60px;
+}
 
-  <div class="case-study">
-    <h3>API Platform Standardization</h3>
-    <p><strong>Problem:</strong> Enterprise integrations were slow and inconsistent across customers.</p>
-    <p><strong>Solution:</strong> Designed standardized API framework and data mapping layer.</p>
-    <p><strong>Impact:</strong></p>
-    <ul>
-      <li>Reduced integration effort by 25%</li>
-      <li>Faster onboarding for enterprise clients</li>
-    </ul>
-    <p><strong>Key Tradeoff:</strong> Standardization vs customization flexibility</p>
-  </div>
+.hero h1 {
+  font-size: 34px;
+}
 
-  <div class="case-study">
-    <h3>Product Adoption Optimization</h3>
-    <p><strong>Problem:</strong> Low adoption of platform modules</p>
-    <p><strong>Solution:</strong> Redesigned onboarding + introduced workflow automation</p>
-    <p><strong>Impact:</strong></p>
-    <ul>
-      <li>+20% increase in product adoption</li>
-      <li>+15% improvement in CSAT</li>
-    </ul>
-    <p><strong>Key Insight:</strong> Adoption improved more via onboarding than new features</p>
-  </div>
+.subtitle {
+  color: #8b949e;
+  margin-bottom: 15px;
+}
 
-</section>
+.hero-desc {
+  max-width: 600px;
+  margin: auto;
+  color: #8b949e;
+}
 
-<!-- EXPERIENCE -->
-<section id="experience" class="section">
-  <h2>Experience</h2>
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 30px;
+  gap: 10px;
+  font-weight: bold;
+}
 
-  <div class="job">
-    <h3>Lead Product Manager</h3>
-    <p>Nous Infosystems | Roper Technologies</p>
-    <ul>
-      <li>Defined platform strategy for API-driven enterprise SaaS</li>
-      <li>Increased product adoption by ~20%</li>
-      <li>Owned roadmap across multiple teams</li>
-    </ul>
-  </div>
+.btn {
+  padding: 10px 18px;
+  margin: 10px;
+  display: inline-block;
+  border-radius: 6px;
+  text-decoration: none;
+}
 
-  <div class="job">
-    <h3>Senior Product Manager</h3>
-    <p>Epicor</p>
-    <ul>
-      <li>Reduced integration effort by 25%</li>
-      <li>Improved adoption and customer satisfaction</li>
-    </ul>
-  </div>
+.primary {
+  background: #238636;
+  color: white;
+}
 
-</section>
+.secondary {
+  border: 1px solid #30363d;
+  color: white;
+}
 
-<!-- SKILLS -->
-<section id="skills" class="section">
-  <h2>Core Strengths</h2>
+.card {
+  border: 1px solid #30363d;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 10px;
+  transition: 0.2s;
+}
 
-  <ul>
-    <li>Product Strategy & Roadmap</li>
-    <li>Platform & API Products</li>
-    <li>Enterprise SaaS</li>
-    <li>Product Analytics & Data</li>
-    <li>Cross-functional Leadership</li>
-  </ul>
+.card:hover {
+  border-color: #58a6ff;
+  transform: translateY(-3px);
+}
 
-</section>
+.job {
+  margin-top: 30px;
+}
 
-<!-- THINKING -->
-<section class="section">
-  <h2>How I Build Products</h2>
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
-  <ul>
-    <li>Start with customer problems, not features</li>
-    <li>Prioritize based on impact vs effort</li>
-    <li>Design scalable platforms, not one-off solutions</li>
-    <li>Use data and feedback loops to iterate</li>
-  </ul>
-</section>
+.skills span {
+  background: #161b22;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
 
-<!-- CONTACT -->
-<section id="contact" class="section">
-  <h2>Let’s Build Something Great</h2>
+.thinking {
+  margin-left: 20px;
+}
 
-  <p>Open to platform, SaaS, and AI-driven product roles.</p>
-
-  <a href="mailto:piyush941029@gmail.com">Email Me</a>
-  <a href="https://www.linkedin.com/in/piyush-productmanager/">LinkedIn</a>
-</section>
-
-</body>
-</html>
+.contact-links a {
+  display: block;
+  margin-top: 10px;
+  color: #58a6ff;
+}
